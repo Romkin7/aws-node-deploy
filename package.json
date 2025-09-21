@@ -1,0 +1,16 @@
+{
+  "name": "aws-ec2-node-deploy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Roman Tuomisto",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "pino": "^9.11.0"
+  }
+}
