@@ -23,6 +23,7 @@ function copyFiles() {
     }
     const data = JSON.parse(packageJsonFile);
     delete data.devDependencies;
+    delete data.type;
     fs.writeFileSync(destinationPath, JSON.stringify(data, null, 2));
     fs.copyFileSync(licenseSourcePath, licenseDestinationPath);
     fs.copyFileSync(ecosystemConfigPath, ecosystemConfigDestinationPath);
