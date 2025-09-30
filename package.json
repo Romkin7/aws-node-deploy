@@ -1,16 +1,22 @@
 {
-  "name": "aws-ec2-node-deploy",
-  "version": "1.0.0",
-  "main": "index.js",
-  "type": "module",
-  "scripts": {
-    "start": "node index.js"
-  },
-  "author": "Roman Tuomisto",
-  "license": "MIT",
-  "description": "",
-  "dependencies": {
-    "express": "^5.1.0",
-    "pino": "^9.11.0"
-  }
+    "name": "aws-ec2-node-deploy",
+    "version": "1.0.0",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "node index.js",
+        "build": "tsc && node scripts/copyFiles.js"
+    },
+    "author": "Roman Tuomisto",
+    "license": "MIT",
+    "description": "AWS EC2 Node.js Deployment Example",
+    "dependencies": {
+        "express": "^5.1.0",
+        "pino": "^9.11.0"
+    },
+    "devDependencies": {
+        "@types/express": "^5.0.3",
+        "prettier": "^3.6.2",
+        "typescript": "^5.9.2"
+    }
 }
