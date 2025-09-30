@@ -24,6 +24,10 @@ jobs:
           mkdir -p certs
           echo "${{ secrets.RR_SERVER_PEM }}" > certs/rr-server.pem
           chmod 400 certs/rr-server.pem
+      
+      - name: Add EC2 Host to known_hosts
+        run: |
+          ssh-keyscan -H ${{ secrets.AWS_EC2_HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy
         run: |
