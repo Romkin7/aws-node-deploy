@@ -2,7 +2,7 @@ export default {
     apps: [
         {
             name: 'node_deploy_app1',
-            script: './build/index.js',
+            script: './index.js',
             env_production: {
                 NODE_ENV: 'production',
             },
