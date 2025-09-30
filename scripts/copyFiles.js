@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+const envDestinationFilePath = path.join(import.meta.dirname, '../build/.env');
 const sourcePath = path.join(import.meta.dirname, '../package.json');
 const destinationPath = path.join(import.meta.dirname, '../build/package.json');
 const licenseSourcePath = path.join(import.meta.dirname, '../LICENSE');
@@ -25,6 +26,7 @@ function copyFiles() {
     delete data.devDependencies;
     delete data.type;
     fs.writeFileSync(destinationPath, JSON.stringify(data, null, 2));
+    fs.writeFileSync(envDestinationFilePath, 'NODE_ENV=production\n PORT=3080\n');
     fs.copyFileSync(licenseSourcePath, licenseDestinationPath);
     fs.copyFileSync(ecosystemConfigPath, ecosystemConfigDestinationPath);
     console.log('package.json, LICENSE, and ecosystem.config.js copied successfully.');

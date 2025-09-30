@@ -1,4 +1,4 @@
-name: CI/CD
+name: Depoloy to AWS EC2
 
 on:
   push:
