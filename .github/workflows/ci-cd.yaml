@@ -22,7 +22,7 @@ jobs:
       - name: Create PEM file
         run: |
           mkdir -p certs
-          echo "${{ secrets.RR_SERVER_PEM }}" > certs/rr-server.pem
+          printf "%s" "${{ secrets.RR_SERVER_PEM }}" > certs/rr-server.pem
           chmod 400 certs/rr-server.pem
       
       - name: Add EC2 Host to known_hosts
