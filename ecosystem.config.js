@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     apps: [
         {
             name: 'node_deploy_app1',
