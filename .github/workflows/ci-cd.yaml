@@ -23,7 +23,7 @@ jobs:
         run: |
           mkdir -p certs
           printf "%s" "${{ secrets.RR_SERVER_PEM }}" > certs/rr-server.pem
-          chmod 400 certs/rr-server.pem
+          chmod 400 ./certs/rr-server.pem
       
       - name: Add EC2 Host to known_hosts
         run: |
@@ -39,7 +39,8 @@ jobs:
           ssh -i "$PEM_FILE" ${{ secrets.AWS_EC2_USER }}@${{ secrets.AWS_EC2_HOST }} << EOF
             cd ~/
             tar -xzf $ARCHIVE_NAME
-            npm install --prefix ./build --production
+            cd ./build
+            npm install --prefix ./ --production
             pm2 stop all || true
             pm2 start ecosystem.config.js --env production
           EOF
