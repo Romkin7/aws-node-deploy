@@ -11,6 +11,7 @@
     "license": "MIT",
     "description": "AWS EC2 Node.js Deployment Example",
     "dependencies": {
+        "dotenv": "^17.2.3",
         "express": "^5.1.0",
         "pino": "^9.11.0"
     },
